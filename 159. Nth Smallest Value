@@ -1,0 +1,18 @@
+///https://a2oj.com/p?ID=159
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int tc,ar[100],i,j;
+    cin>>tc;
+    while(tc--)
+    {
+        for(i=0;i<10;i++)
+        {
+            cin>>ar[i];
+        }
+        sort(ar,ar+10);
+        cout<<ar[1]<<endl;
+    }
+}
