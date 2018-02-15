@@ -1,12 +1,3 @@
-// A2OJ
-//Ladders
-//First Time to Solve
-//24. Arabic and English
-//https://a2oj.com/p?ID=24
-//Ad Hoc
-
-
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -40,9 +31,27 @@ int main()
             }
             cout<<endl;
         }
-        else
+        else if(flag==0)
         {
 
+            for(i=1; i<num; i++)
+            {
+                cout<<str[i]<<" ";
+            }
+            cout<<str[0];
+            cout<<endl;
+        }
+        else if(flag==num-1)
+        {
+            cout<<str[num-1];
+            for(i=0; i<num-1; i++)
+            {
+                cout<<" "<<str[i];
+            }
+            cout<<endl;
+        }
+        else
+        {
             for(i=flag+1; i<num; i++)
             {
                 cout<<str[i]<<" ";
@@ -54,17 +63,9 @@ int main()
             {
                 cout<<str[i]<<" ";
             }
-
-
             cout<<str[flag-1]<<endl;
-
         }
-
-
     }
-
+    return 0;
 }
-
-
-
 
