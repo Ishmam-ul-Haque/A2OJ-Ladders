@@ -1,0 +1,49 @@
+///https://a2oj.com/p?ID=22
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define mx 112
+
+int x[]= {-1,-1,-1,+0,+0,+1,+1,+1};
+int y[]= {-1,+0,+1,-1,+1,-1,+0,+1};
+
+int main()
+{
+    int i,j,k,r,c,tc,cnt;
+    int mat[mx][mx],flag[mx];
+    cin>>tc;
+    while(tc--)
+    {
+        memset(mat,-1,sizeof mat);
+        memset(flag,0,sizeof flag);
+        cnt=0;
+        cin>>r>>c;
+        for(i=1; i<=r; i++)
+            for(j=1; j<=c; j++)
+                cin>>mat[i][j];
+        for(i=1; i<=r; i++)
+        {
+            for(j=1; j<=c; j++)
+            {
+                if(mat[i][j]==-1) continue;
+                else
+                {
+                    for(k=0; k<8; k++)
+                    {
+                        if(mat[i][j]==mat[i+x[k]][j+y[k]])
+                            flag[mat[i][j]]++;
+                    }
+                }
+            }
+        }
+        for(i=0; i<=100; i++)
+            if(flag[i]>0) cnt++;
+        cout<<cnt<<endl;
+
+    }
+    
+    return 0;
+
+}
+
